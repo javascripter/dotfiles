@@ -41,10 +41,15 @@ alias beep='echo "\a"'
 function del() {
   mv $* ~/.Trash/
 }
+
 function ypsilon() {
   rlwrap -q "\"'" ypsilon $@
 }
-alias gvim="open -a MacVim"
+case $OSTYPE in
+  darwin*)
+    alias gvim="open -a MacVim"
+    ;;
+esac
 
 # from http://d.hatena.ne.jp/Ubuntu/20080416/1208357134
 case "${TERM}" in
