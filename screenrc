@@ -1,0 +1,12 @@
+startup_message off
+#term xterm-color
+defutf8 on
+defkanji utf-8
+defencoding utf-8
+defscrollback 10000
+vbell off
+autodetach on
+#caption always "%{= yb} %-w%{=b dr} %n %t %{-}%+w %= %{=b yk} [%l] %{=b yb}%y/%m/%d(%D) %{=b ym}%c"
+caption always "%{=r dd} %-w%{=b dd} %n %t %{-}%+w %="
+termcapinfo  xterm-256color hs@:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
+
