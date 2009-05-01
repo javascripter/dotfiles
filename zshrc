@@ -46,7 +46,6 @@ function ypsilon() {
 }
 alias gvim="open -a MacVim"
 
-
 # from http://d.hatena.ne.jp/Ubuntu/20080416/1208357134
 case "${TERM}" in
   *xterm*|rxvt|(dt|k|E)term)

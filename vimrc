@@ -7,7 +7,7 @@ set autoindent
 set smartindent
 set smarttab
 set shiftround
-set softtabstop=0 "softtabstop is equal to  tabstop
+set softtabstop=0
 set backspace=indent,eol,start
 set formatoptions+=m
 set wildmenu
