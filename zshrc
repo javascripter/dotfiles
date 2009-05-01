@@ -38,9 +38,6 @@ compinit
 
 alias ls="ls -G"
 alias beep='echo "\a"'
-function del() {
-  mv $* ~/.Trash/
-}
 
 function ypsilon() {
   rlwrap -q "\"'" ypsilon $@
@@ -58,3 +55,4 @@ case "${TERM}" in
     ;;
 esac
 
+source ~/bin/del.zsh
