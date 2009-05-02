@@ -4,6 +4,8 @@ RPROMPT="[%~]"
 
 setopt print_eight_bit
 
+export EDITOR=vi
+
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -47,6 +49,10 @@ function ypsilon() {
 case $OSTYPE in
   darwin*)
     alias gvim="open -a MacVim"
+    # from http://d.hatena.ne.jp/hitode909/20080314
+    function ql() {
+      qlmanage -p $@ >& /dev/null
+    }
     ;;
 esac
 
