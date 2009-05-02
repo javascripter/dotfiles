@@ -15,6 +15,7 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
+setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt share_history
 setopt hist_ignore_space
@@ -29,6 +30,7 @@ setopt correct
 setopt list_packed
 setopt noautoremoveslash
 setopt nolistbeep
+setopt extended_glob
 
 bindkey "^B" run-help
 [ -n "`alias run-help`" ] && unalias run-help
