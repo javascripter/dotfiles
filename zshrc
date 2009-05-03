@@ -53,6 +53,9 @@ case $OSTYPE in
     function ql() {
       qlmanage -p $@ >& /dev/null
     }
+    function hibernate() {
+	osascript -e 'tell application "System Events"' -e 'sleep' -e 'end tell'
+    }
     ;;
 esac
 
