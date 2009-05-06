@@ -27,6 +27,7 @@ set hidden
 set showmatch
 set showcmd
 set number
+set ruler
 set wrap
 set scrolloff=5
 set list
