@@ -67,4 +67,11 @@ case "${TERM}" in
     ;;
 esac
 
+if which wget >/dev/null; then
+	alias header="wget -S --spider"
+else
+	alias header="curl --head"
+fi
+
 source ~/bin/del.zsh
+
