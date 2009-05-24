@@ -1,6 +1,6 @@
 set prompt
 PROMPT="%% "
-RPROMPT="[%~]"
+# RPROMPT="[%~]"
 
 setopt print_eight_bit
 setopt nobeep
