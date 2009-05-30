@@ -73,5 +73,22 @@ else
 	alias header="curl --head"
 fi
 
-source ~/bin/del.zsh
+# from http://ujihisa.nowa.jp/entry/914c0395ff/
+
+function del() {
+  for file in $*; do
+    if [ -e $file ]; then
+      BASENAME=`basename $file`
+      NAME=$BASENAME
+      COUNT=0
+      while [ -e ~/.Trash/$NAME ]; do
+        COUNT=$(($COUNT+1))
+        NAME="$BASENAME.$COUNT"
+      done
+      mv $file ~/.Trash/$NAME
+    else
+      echo "No such file or directory: $file"
+    fi
+  done
+}
 
