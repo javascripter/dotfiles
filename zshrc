@@ -74,7 +74,6 @@ else
 fi
 
 # from http://ujihisa.nowa.jp/entry/914c0395ff/
-
 function del() {
   for file in $*; do
     if [ -e $file ]; then
