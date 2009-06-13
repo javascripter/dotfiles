@@ -20,8 +20,8 @@ set hlsearch
 
 set nobackup
 set autoread
-"set noswapfile
-set directory=~/.vim/swp/
+set noswapfile
+"set directory=~/.vim/swp/
 set hidden
 
 set showmatch
