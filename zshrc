@@ -63,7 +63,7 @@ esac
 # from http://d.hatena.ne.jp/Ubuntu/20080416/1208357134
 case "${TERM}" in
   *xterm*|rxvt|(dt|k|E)term)
-    exec screen -U -D -RR
+    exec screen -U -RR # -D
     ;;
 esac
 
