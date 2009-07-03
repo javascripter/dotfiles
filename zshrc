@@ -39,23 +39,20 @@ bindkey "^B" run-help
 [ -n "`alias run-help`" ] && unalias run-help
 autoload run-help
 autoload -U compinit
-compinit
 
 alias ls="ls -G"
 alias beep='echo "\a"'
 
-function ypsilon() {
-  rlwrap -q "\"'" ypsilon $@
-}
+if which ypsilon >/dev/null; then
+	function ypsilon() {
+	rlwrap -q "\"'" ypsilon $@
+	}
+fi
 case $OSTYPE in
   darwin*)
-    alias gvim="open -a MacVim"
     # from http://d.hatena.ne.jp/hitode909/20080314
     function ql() {
       qlmanage -p $@ >& /dev/null
-    }
-    function hibernate() {
-	osascript -e 'tell application "System Events"' -e 'sleep' -e 'end tell'
     }
     ;;
 esac
