@@ -39,6 +39,7 @@ bindkey "^B" run-help
 [ -n "`alias run-help`" ] && unalias run-help
 autoload run-help
 autoload -U compinit
+compinit
 
 alias ls="ls -G"
 alias beep='echo "\a"'
