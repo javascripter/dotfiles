@@ -3,3 +3,7 @@
 	email = javascripter_@livedoor.com
 [color]
 	ui = auto
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
