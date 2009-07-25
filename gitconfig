@@ -7,3 +7,5 @@
 	branch = auto
 	diff = auto
 	interactive = auto
+[alias]
+	info = config --get remote.origin.url
