@@ -38,7 +38,7 @@ set fileformats=unix,dos,mac
 
 set modeline
 set modelines=10
-autocmd FileType ruby,javascript,perl,scheme,python,html,css set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType ruby,javascript,perl,scheme,python,html,css,haskell set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType c,cpp set tabstop=4 shiftwidth=4 noexpandtab
 
 
