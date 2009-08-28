@@ -9,9 +9,3 @@ autodetach on
 #caption always "%{= yb} %-w%{=b dr} %n %t %{-}%+w %= %{=b yk} [%l] %{=b yb}%y/%m/%d(%D) %{=b ym}%c"
 caption always "%{=r dd} %-w%{=b dd} %n %t %{-}%+w %="
 termcapinfo  xterm-256color hs@:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
-
-bindkey -m ' ' eval 'stuff \040' 'writebuf /tmp/screen-exchange' 'exec !!! sh -c "cat /tmp/screen-exchange | pbcopy"'
-bindkey -m Y   eval 'stuff Y'    'writebuf /tmp/screen-exchange' 'exec !!! sh -c "cat /tmp/screen-exchange | pbcopy"'
-bindkey -m y   eval 'stuff y'    'writebuf /tmp/screen-exchange' 'exec !!! sh -c "cat /tmp/screen-exchange | pbcopy"'
-bindkey -m W   eval 'stuff W'    'writebuf /tmp/screen-exchange' 'exec !!! sh -c "cat /tmp/screen-exchange | pbcopy"'
-
