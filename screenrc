@@ -9,3 +9,4 @@ autodetach on
 #caption always "%{= yb} %-w%{=b dr} %n %t %{-}%+w %= %{=b yk} [%l] %{=b yb}%y/%m/%d(%D) %{=b ym}%c"
 caption always "%{=r dd} %-w%{=b dd} %n %t %{-}%+w %="
 termcapinfo  xterm-256color hs@:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
+termcapinfo xterm* ti@:te@
