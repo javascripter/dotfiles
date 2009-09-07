@@ -41,7 +41,11 @@ autoload run-help
 autoload -U compinit
 compinit
 
-alias ls="ls --color"
+if ls --color >& /dev/null; then
+	alias ls="ls --color"
+else
+	alias ls="ls -G"
+fi
 alias beep='echo "\a"'
 
 if which ypsilon >/dev/null; then
