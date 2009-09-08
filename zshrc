@@ -69,6 +69,10 @@ case "${TERM}" in
     ;;
 esac
 
+function mkcd() {
+  mkdir "$1" && cd "$1"
+}
+
 if which wget >/dev/null; then
 	alias header="wget -S --spider"
 else
