@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+# vim: ft=ruby
+def mk_uniq_name_by(filename, path)
+  uniq_name = filename
+  prefix = 0
+  while FileTest.exist?(File.join(path, uniq_name))
+    prefix += 1
+    uniq_name = sprintf("%d.%s", prefix, filename)
+  end
+  uniq_name
+end
+
+def die(*args)
+  $stderr.printf(*args)
+  exit(1)
+end
+
+def trash(filename)
+  die("No such file or directory: %s\n", filename) unless FileTest.exist?(filename)
+  trash_path = File.expand_path("~/.Trash")
+  basename = File.basename(filename)
+  newname = mk_uniq_name_by(basename, trash_path)
+  File.rename(filename, File.join(trash_path, newname))
+end
+
+ARGV.each {|filename|
+  trash(filename)
+}
