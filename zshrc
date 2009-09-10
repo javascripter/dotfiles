@@ -42,16 +42,16 @@ autoload -U compinit
 compinit
 
 if ls --color >& /dev/null; then
-	alias ls="ls --color"
+  alias ls="ls --color"
 else
-	alias ls="ls -G"
+  alias ls="ls -G"
 fi
 alias beep='echo "\a"'
 
 if which ypsilon >/dev/null; then
-	function ypsilon() {
-	rlwrap -q "\"'" ypsilon $@
-	}
+  function ypsilon() {
+    rlwrap -q "\"'" ypsilon $@
+  }
 fi
 case $OSTYPE in
   darwin*)
@@ -74,8 +74,8 @@ function mkcd() {
 }
 
 if which wget >/dev/null; then
-	alias header="wget -S --spider"
+  alias header="wget -S --spider"
 else
-	alias header="curl --head"
+  alias header="curl --head"
 fi
 
