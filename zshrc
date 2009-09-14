@@ -32,11 +32,16 @@ setopt pushd_ignore_dups
 setopt pushd_to_home
 setopt pushd_silent
 
+setopt auto_remove_slash
+setopt auto_menu
+
 setopt correct
 setopt list_packed
 setopt noautoremoveslash
 setopt nolistbeep
 setopt extended_glob
+
+setopt rm_star_silent
 
 bindkey "^B" run-help
 [ -n "`alias run-help`" ] && unalias run-help
