@@ -1,4 +1,4 @@
-colorscheme default
+colorscheme osx_like
 set guioptions-=T
 set cmdheight=1
 
