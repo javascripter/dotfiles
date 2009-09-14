@@ -62,6 +62,9 @@ case $OSTYPE in
     function ql() {
       qlmanage -p $@ >& /dev/null
     }
+    function app() {
+      open -a $1 --args $@[2,-1]
+  }
     ;;
 esac
 
