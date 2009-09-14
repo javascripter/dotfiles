@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 # vim: ft=ruby
+require 'fileutils'
 def mk_uniq_name_by(filename, path)
   uniq_name = filename
   prefix = 0
@@ -17,10 +18,15 @@ end
 
 def trash(filename)
   die("No such file or directory: %s\n", filename) unless FileTest.exist?(filename)
+  filename = File.expand_path(filename)
   trash_path = File.expand_path("~/.Trash")
-  basename = File.basename(filename)
-  newname = mk_uniq_name_by(basename, trash_path)
-  File.rename(filename, File.join(trash_path, newname))
+  if filename.start_with?(trash_path)
+    FileUtils.remove(filename)
+  else
+    basename = File.basename(filename)
+    newname = mk_uniq_name_by(basename, trash_path)
+    File.rename(filename, File.join(trash_path, newname))
+  end
 end
 
 ARGV.each {|filename|
