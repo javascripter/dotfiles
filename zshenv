@@ -9,3 +9,5 @@ if [ -d ~/.cabal/bin ]; then
 fi
 export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin/:$PATH
+
+typeset -U PATH
