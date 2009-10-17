@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-username=javascripter
-read message
-curl -s -S -u $username -d status=$message http://twitter.com/statuses/update.xml
