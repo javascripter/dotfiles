@@ -53,6 +53,8 @@ compinit
 # from http://d.hatena.ne.jp/yuta84q/20090301/1235896452
 alias sudo="sudo "
 
+alias dc="cd"
+
 if ls --color >& /dev/null; then
   alias ls="ls --color"
 else
