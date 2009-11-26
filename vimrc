@@ -1,5 +1,6 @@
 set nocompatible
 syntax on
+filetype plugin on
 set autoindent
 set smartindent
 set smarttab
