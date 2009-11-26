@@ -6,7 +6,7 @@ setopt print_eight_bit
 setopt nobeep
 
 export EDITOR=vi
-export SCREENDIR=/tmp/screens
+# export SCREENDIR=/tmp/screens
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
@@ -80,11 +80,11 @@ case $OSTYPE in
 esac
 
 # from http://d.hatena.ne.jp/Ubuntu/20080416/1208357134
-case "${TERM}" in
-  *xterm*|rxvt|(dt|k|E)term)
-    exec screen -U -RR # -D
-    ;;
-esac
+# case "${TERM}" in
+#   *xterm*|rxvt|(dt|k|E)term)
+#     exec screen -U -RR # -D
+#     ;;
+# esac
 
 function mkcd() {
   mkdir "$1" && cd "$1"
