@@ -1,8 +1,5 @@
 set nocompatible
 syntax on
-filetype on
-filetype indent on
-filetype plugin on
 set autoindent
 set smartindent
 set smarttab
@@ -39,5 +36,3 @@ set modeline
 set modelines=10
 
 set background=light
-set term=xterm-color
-
