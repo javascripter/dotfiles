@@ -1,6 +1,9 @@
 if [ -e ~/.profile ]; then
   source ~/.profile
 fi
+if [ -d /opt/local/bin ]; then
+  export PATH=/opt/local/bin:$PATH
+fi
 if [ -d ~/bin ]; then
   export PATH=~/bin:$PATH
 fi
