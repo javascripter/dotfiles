@@ -1,11 +1,17 @@
+# This is Git's per-user configuration file.
 [user]
-	name = javascripter
-	email = javascripter_@livedoor.com
-[color]
-	ui = auto
-	status = auto
-	branch = auto
-	diff = auto
-	interactive = auto
+	name = Tsubasa Sakai
+	email = javascripter@tsukkun.net
+[pull]
+	rebase = merges
+[rerere]
+	enabled = true
+[url "git@github.com:"]
+  pushInsteadOf = https://github.com/
+
 [alias]
-	info = config --get remote.origin.url
+  co = checkout
+  br = branch
+  st = status
+[rebase]
+	autosquash = true
