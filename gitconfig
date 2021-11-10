@@ -15,3 +15,7 @@
   st = status
 [rebase]
 	autosquash = true
+[ghq]
+vcs = git
+root = ~/Projects
+

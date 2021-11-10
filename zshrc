@@ -62,11 +62,6 @@ else
 fi
 alias beep='echo "\a"'
 
-if which ypsilon >/dev/null; then
-  function ypsilon() {
-    rlwrap -q "\"'" ypsilon $@
-  }
-fi
 case $OSTYPE in
   darwin*)
     # from http://d.hatena.ne.jp/hitode909/20080314
@@ -95,4 +90,62 @@ if which wget >/dev/null; then
 else
   alias header="curl --head"
 fi
+
+# peco + history
+function peco-select-history() {
+  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+
+if type peco &>/dev/null; then
+  zle -N peco-select-history
+  bindkey '^r' peco-select-history
+fi
+
+# peco + ghq
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  #zle clear-screen
+}
+
+if type peco &>/dev/null; then
+  zle -N peco-src
+  bindkey '^g' peco-src
+fi
+
+
+# cd to selected ghq repository
+alias g='cd $(ghq root)/$(ghq list | peco)'
+
+# asdf autocompletion
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+
+# For ruby-build (used in asdf-ruby as well)
+# use Homebrew OpenSSL (note: will not work for ruby < 2.4)
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+
+
+# go
+export GOPATH=$HOME/go
+export GOROOT="/opt/homebrew/Cellar/go/1.17.2/libexec"
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOROOT/bin
+
+# Android Studio
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home/
 
